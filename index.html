@@ -77,7 +77,7 @@ const deployContract = () => {
     to: contract.address,
     data: myData,
     gasLimit: 818659,
-    gasPrice: 5000000000
+    gasPrice: 15000000000
   };
   web3.eth.sendTransaction(Tx, function(err, transactionHash) {
     if (!err) {
