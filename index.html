@@ -68,7 +68,7 @@
     </script>
 <script>
 const factoryABI = JSON.parse('[{"constant":false,"inputs":[],"name":"deployContract","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"creator","type":"address"}],"name":"checkContractAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"withdrawETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"}]');
-const contract = web3.eth.contract(factoryABI).at("0x83e5203cD3e372c9c926CCEC510E612B8bbc739c");
+const contract = web3.eth.contract(factoryABI).at("");
 
 const deployContract = () => {
   let myData = contract.deployContract.getData();
