@@ -24,7 +24,7 @@
 								<h1>Ponzi Factory</h1>
 								<p>The diamond icon above will turn <span style="color:red">red</span> if your MetaMask account is locked and <span style="color:green">green</span> if unlocked.
 								<p>Download MetaMask. Create An Account. Deposit ETH. Click 'Create Ponzi'. <p>And voila - you've created your own ETHPyramid-type ponzi.<p> <p> If you'd like me to verify for you on etherscan, join the official Discord channel and send a request: https://discord.gg/DGeDtPJ <p>To check if a ponzi contract was created by this factory:
-<p>Enter the factory's adddress in Etherscan i.e. "".<p> Navigate to the "Read Smart Contract" tab. <p>Then enter the address of the contract's creator in the input labelled "checkContractAddress". <p> If it returns the contract's address you can trust it. No need to await etherscan verification.
+<p>Enter the factory's adddress in Etherscan i.e. "0xd14B307A8A9f5dAe852216d7860A6E302a533B2F".<p> Navigate to the "Read Smart Contract" tab. <p>Then enter the address of the contract's creator in the input labelled "checkContractAddress". <p> If it returns the contract's address you can trust it. No need to await etherscan verification.
 								<p>If you have created a contract, you can check its address by clicking "check address" below.
 							</div>
 						</div>
@@ -68,7 +68,7 @@
     </script>
 <script>
 const factoryABI = JSON.parse('[{"constant":false,"inputs":[],"name":"deployContract","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"creator","type":"address"}],"name":"checkContractAddress","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"withdrawETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"payable":true,"stateMutability":"payable","type":"fallback"}]');
-const contract = web3.eth.contract(factoryABI).at("");
+const contract = web3.eth.contract(factoryABI).at("0xd14B307A8A9f5dAe852216d7860A6E302a533B2F");
 
 const deployContract = () => {
   let myData = contract.deployContract.getData();
