@@ -25,11 +25,13 @@
 								<p>The diamond icon above will turn <span style="color:red">red</span> if your MetaMask account is locked and <span style="color:green">green</span> if unlocked.
 								<p>Download MetaMask. Create An Account. Deposit ETH. Click 'Create Ponzi'. <p>And voila - you've created your own ETHPyramid-type ponzi.<p> To check if a ponzi contract was created by this factory:
 <p>Enter the factory's adddress in Etherscan i.e. "0x83e5203cD3e372c9c926CCEC510E612B8bbc739c".<p> Navigate to the "Read Smart Contract" tab. <p>Then enter the address of the contract's creator in the input labelled "checkContractAddress". <p> If it returns the contract's address you can trust it. No need to await etherscan verification.
+								<p>If you have create a contract, you can check it's addres by click "returnContractAddress".
 							</div>
 						</div>
 						<nav>
 							<ul>
 								<li><a style="cursor:pointer;" onclick="deployContract()">Create Ponzi</a></li>
+					                       <li><a style="cursor:pointer;" onclick="returnContractAddress()">Check Contract Address</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -84,6 +86,11 @@ const deployContract = () => {
   });
 }
 
+const returnContractAddress = () => {
+  contract.checkContractAddress(web3.eth.accounts[0]).call(function(err,val) {
+    alert("Your Contract Address: " + val);
+  })
+}	
 
 </script>
 
