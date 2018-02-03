@@ -88,7 +88,12 @@ const deployContract = () => {
 
 const returnContractAddress = () => {
   contract.checkContractAddress.call(web3.eth.accounts[0],function(err,val) {
-    alert("Your Contract Address: " + val);
+    if(val =="0x0000000000000000000000000000000000000000") {
+      alert("You haven't created a contract");
+    }
+    else {	  
+      alert("Your Contract Address: " + val);
+    }	    
   })
 }	
 
